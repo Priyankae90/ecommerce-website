@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 300px;
+            padding: 20px;
+            margin: 30px auto;
+            border-radius: 8px;
+            gap: 10px;
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: rgb(15, 11, 19);
+
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: url(background\ watches\ 2.jpg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: auto;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: black;
+            text-align: center;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            color: rgb(22, 21, 21);
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+
+        }
+
+        button:hover {
+            background-color: rgb(89, 181, 218);
+        }
+
+        .form {
+            border-radius: 8px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2><b>My shop</b></h2><br>
+        <form action="project.html">
+            <label for="email">Email:</label><br>
+            <input type="email" class="form" id="email" placeholder="Enter your email" required><br><br>
+            <button onclick="validateEmail()">Check</button>
+            <p id="result"></p>
+        </form>
+    </div>
+
+    <script>
+        function validateEmail() {
+            const email = document.getElementById("email").value;
+            const result = document.getElementById("result");
+            const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+            if (emailRegex.test(email)) {
+                result.textContent = "Valid email!";
+                result.style.color = "green";
+            } else {
+                result.textContent = "Invalid email.";
+                result.style.color = "red";
+            }
+        }
+    </script>
+</body>
+
+</html>
